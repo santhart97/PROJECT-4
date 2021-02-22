@@ -1,7 +1,9 @@
+
 from pymongo import MongoClient
 
 client = MongoClient()
-db = client.lotr_quotes.quotes
+
+db = client.yoda.dialogue
 
 def insert(data):
 
@@ -10,6 +12,5 @@ def insert(data):
 
 
 def read(query, project=None):
-   
     data = db.find(query, project)
     return list(data)
