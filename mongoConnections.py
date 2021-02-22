@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
 client = MongoClient()
-db = client.starwars.quotes
+db = client.lotr_quotes.quotes
 
 def insert(data):
 
