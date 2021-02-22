@@ -22,7 +22,7 @@ def quotes_by_character(character):
     q = {"char":character}
     data = read(q, project={"char":1, "dialog":1, "_id":0})
     if len(data) == 0:
-        return {"Error":"The character is still not in the Database"}
+        return {"Error"}
     return json_util.dumps(data)
 
 @app.route("/quotesbymovie/<movie>")
@@ -30,7 +30,7 @@ def quotes_by_movie(movie):
 
     q = {"movie":movie}
     if not check_groups(q,"movie",["The Fellowshi of the Ring", "The Two Towers", "The Return of the King"]):
-        return {"Error":"The movie is still not in the database"}
+        return {"Error"}
     data = read(q, project={"name":1, "dialog":1, "_id":0})
 
     return json_util.dumps(data)
