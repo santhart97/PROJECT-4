@@ -2,7 +2,7 @@ from pymongo import MongoClient
 
 client = MongoClient()
 
-db = client.yoda.dialogue
+db = client.lotr_quotes.dialogue
 
 def insert(data):
 
